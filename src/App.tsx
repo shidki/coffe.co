@@ -44,13 +44,13 @@ const App: React.FC = () => {
       let basePage = 5;
       switch(currentPage) {
         case 'home':
-          basePage = isSmallMobile ? 7.4 : isMobile ? 7.4 : isTablet ? 5 : 5.2;
+          basePage = isSmallMobile ? 7.4 : isMobile ? 7.4 : isTablet ? 5 : 5.7;
           break;
         case 'about':
-          basePage = isSmallMobile ? 12.6 : isMobile ? 12.6 : isTablet ? 5.7 : 6.2;
+          basePage = isSmallMobile ? 12.6 : isMobile ? 12.6 : isTablet ? 5.7 : 7.2;
           break;
         case 'menu':
-          basePage = isSmallMobile ? 7.5 : isMobile ? 7.5 : isTablet ? 3.8 : 4;
+          basePage = isSmallMobile ? 7.5 : isMobile ? 7.5 : isTablet ? 3.8 : 4.35;
           break;
         case 'reservation':
           basePage = 1;
@@ -94,7 +94,7 @@ const App: React.FC = () => {
         style={{ position: 'absolute', top: 0, left: 0 }}
       >
         <ScrollControls pages={pageCount} damping={0.2}>
-          <CoffeeScene currentPage={currentPage} />
+          <CoffeeScene />
           
           {currentPage === 'home' && <HomePage setCurrentPage={setCurrentPage} />}
           {currentPage === 'about' && <AboutPage />}
