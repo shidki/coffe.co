@@ -50,7 +50,7 @@ const App: React.FC = () => {
           basePage = isSmallMobile ? 13 : isMobile ? 13 : isTablet ? 5.7 : 8;
           break;
         case 'menu':
-          basePage = isSmallMobile ? 6.8 : isMobile ? 6.8 : isTablet ? 3.8 : 4.5;
+          basePage = isSmallMobile ? 6.9 : isMobile ? 6.9 : isTablet ? 3.8 : 4.5;
           break;
         case 'reservation':
           basePage = 1;
