@@ -4,9 +4,9 @@ import { useScroll, Float, Stars } from '@react-three/drei';
 import { MeshStandardMaterial, Group } from 'three';
 import * as THREE from 'three';
 
-interface CoffeeSceneProps {
-  currentPage: string;
-}
+// interface CoffeeSceneProps {
+//   currentPage: string;
+// }
 
 // Steam particles component
 function SteamParticles() {
@@ -82,7 +82,7 @@ function CoffeeBean({ position, rotation, scale = 1 }: { position: [number, numb
 }
 
 // Cappuccino Cup - Wide and Short like real cappuccino
-function CoffeeMug({ color }: { color: string }) {
+function CoffeeMug() {
   const mugRef = useRef<Group>(null!);
   
   return (
@@ -117,7 +117,6 @@ function CoffeeMug({ color }: { color: string }) {
         />
       </mesh>
 
-      
       {/* Cup Handle - Classic design */}
       <group position={[0.82, 0, 0]}>
         <mesh rotation={[0, 0, Math.PI / 2]}>
@@ -139,15 +138,6 @@ function CoffeeMug({ color }: { color: string }) {
           metalness={0.15}
         />
       </mesh>
-
-      {/* Saucer raised rim */}
-      {/* <mesh position={[0, -0.32, 0]}>
-        <torusGeometry args={[1.08, 0.018, 16, 64]} />
-        <meshStandardMaterial 
-          color="#f8f8f8" 
-          roughness={0.2}
-        />
-      </mesh> */}
 
       {/* Saucer center depression */}
       <mesh position={[0, -0.34, 0]}>
@@ -199,11 +189,11 @@ function CoffeeBeans() {
   );
 }
 
-export default function CoffeeScene({ currentPage }: CoffeeSceneProps) {
+export default function CoffeeScene() {
   const scroll = useScroll();
   const groupRef = useRef<Group>(null!);
   
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (!groupRef.current) return;
 
     const scrollOffset = scroll.offset;
@@ -214,12 +204,13 @@ export default function CoffeeScene({ currentPage }: CoffeeSceneProps) {
     groupRef.current.rotation.z = Math.sin(scrollOffset * Math.PI) * 0.1;
   });
 
-  const coffeeColors: Record<string, string> = {
-    home: '#6F4E37',
-    about: '#8B4513',
-    menu: '#A0522D',
-    reservation: '#8B7355',
-  };
+  // Remove unused variable
+  // const coffeeColors: Record<string, string> = {
+  //   home: '#6F4E37',
+  //   about: '#8B4513',
+  //   menu: '#A0522D',
+  //   reservation: '#8B7355',
+  // };
 
   return (
     <>
@@ -264,7 +255,7 @@ export default function CoffeeScene({ currentPage }: CoffeeSceneProps) {
 
       <Float speed={1.2} rotationIntensity={0.2} floatIntensity={0.4}>
         <group ref={groupRef} scale={1.3} position={[0, 0.2, 0]}>
-          <CoffeeMug color={coffeeColors[currentPage] || '#6F4E37'} />
+          <CoffeeMug />
         </group>
       </Float>
 
