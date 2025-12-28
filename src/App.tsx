@@ -44,13 +44,13 @@ const App: React.FC = () => {
       let basePage = 5;
       switch(currentPage) {
         case 'home':
-          basePage = isSmallMobile ? 8 : isMobile ? 8 : isTablet ? 5 : 6;
+          basePage = isSmallMobile ? 8.2 : isMobile ? 8.2 : isTablet ? 5 : 6;
           break;
         case 'about':
           basePage = isSmallMobile ? 13 : isMobile ? 13 : isTablet ? 5.7 : 8;
           break;
         case 'menu':
-          basePage = isSmallMobile ? 8 : isMobile ? 8 : isTablet ? 3.8 : 4.5;
+          basePage = isSmallMobile ? 7.9 : isMobile ? 7.9 : isTablet ? 3.8 : 4.5;
           break;
         case 'reservation':
           basePage = 1;
