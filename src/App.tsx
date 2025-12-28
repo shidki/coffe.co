@@ -44,7 +44,7 @@ const App: React.FC = () => {
       let basePage = 5;
       switch(currentPage) {
         case 'home':
-          basePage = isSmallMobile ? 7.4 : isMobile ? 7.4 : isTablet ? 5 : 5.7;
+          basePage = isSmallMobile ? 7.4 : isMobile ? 7.4 : isTablet ? 5 : 5.8;
           break;
         case 'about':
           basePage = isSmallMobile ? 12.6 : isMobile ? 12.6 : isTablet ? 5.7 : 7.2;
