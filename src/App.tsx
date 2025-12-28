@@ -69,10 +69,10 @@ const App: React.FC = () => {
     calculatePages();
     
     
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: number;
     const handleResize = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(calculatePages, 150);
+      timeoutId = setTimeout(calculatePages, 150) as unknown as number;
     };
     
     window.addEventListener('resize', handleResize);
